@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+/* ─── Dark mode via class strategy ─────────────────────────────────────────── */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ─── Base token overrides for dark mode ────────────────────────────────────── */
+:root {
+  --bg-base: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-nav:  #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --border: #e2e8f0;
+}
+
+.dark {
+  --bg-base: #0f172a;
+  --bg-card: #1e293b;
+  --bg-nav:  #1e293b;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --border: #334155;
+}
+
+/* ─── Global base ────────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-feature-settings: "cv11", "ss01";
+}
+
+/* RTL support */
+[dir="rtl"] body {
+  font-family: 'Tajawal', 'Segoe UI', sans-serif;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 99px; }
+.dark ::-webkit-scrollbar-thumb { background: #475569; }
