@@ -12,6 +12,8 @@ export const clearAccessToken = () => { accessToken = null; };
 const AUTH_WHITELIST = [
     '/api/users/login/',
     '/api/users/register/',
+    '/api/users/register/request-otp/',
+    '/api/users/register/verify-otp/',
     '/api/users/token/refresh/',
     '/api/users/password-reset/request/',
     '/api/users/password-reset/confirm/',

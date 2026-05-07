@@ -62,8 +62,8 @@ const WelcomeBanner = ({ profile }) => {
 
         {/* Text */}
         <div>
-          <p className="text-sm font-medium text-blue-200">{greeting}</p>
-          <h1 className="mt-1 text-2xl sm:text-3xl font-bold tracking-tight">
+          <p className="text-sm font-semibold text-blue-200">{greeting}</p>
+          <h1 className="mt-1 text-3xl sm:text-4xl font-bold tracking-tight">
             Welcome back, <span className="text-white">{username}</span>
           </h1>
           <p className="mt-1.5 text-sm text-blue-200 flex items-center gap-1.5">
@@ -83,8 +83,8 @@ const WelcomeBanner = ({ profile }) => {
           <div key={label} className="flex items-center gap-2 rounded-xl bg-white/10 px-3 py-2 backdrop-blur-sm">
             <Icon className="h-4 w-4 text-blue-200 shrink-0" />
             <div>
-              <p className="text-xs text-blue-200 leading-none">{label}</p>
-              <p className="text-sm font-bold text-white">{value}</p>
+              <p className="text-xs font-medium text-blue-200 leading-none">{label}</p>
+              <p className="text-base font-bold text-white">{value}</p>
             </div>
           </div>
         ))}
@@ -103,8 +103,8 @@ const FeatureCard = ({ icon: Icon, gradient, title, description, action }) => (
       <Icon className="h-5 w-5 text-white" />
     </div>
 
-    <h2 className="text-base font-bold text-gray-900 dark:text-white">{title}</h2>
-    <p className="mt-1.5 flex-1 text-sm leading-relaxed text-gray-500 dark:text-slate-400">{description}</p>
+    <h2 className="text-lg font-bold text-gray-900 dark:text-white">{title}</h2>
+    <p className="mt-2 flex-1 text-base leading-relaxed text-gray-500 dark:text-slate-400">{description}</p>
 
     {action && <div className="mt-5">{action}</div>}
   </div>
@@ -114,7 +114,7 @@ const FeatureCard = ({ icon: Icon, gradient, title, description, action }) => (
 
 const CTAButton = ({ label, icon: Icon, gradient, onClick }) => (
   <button onClick={onClick}
-    className={`group flex w-full items-center justify-between rounded-xl bg-gradient-to-r ${gradient} px-4 py-3 text-sm font-bold text-white shadow-sm hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-150`}>
+    className={`group flex w-full items-center justify-between rounded-xl bg-gradient-to-r ${gradient} px-4 py-3 text-base font-bold text-white shadow-sm hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-150`}>
     <span className="flex items-center gap-2">
       <Icon className="h-4 w-4" />
       {label}
@@ -181,8 +181,8 @@ const Dashboard = () => {
 
       {/* Section heading */}
       <div>
-        <h2 className="text-lg font-bold text-gray-900 dark:text-white">{t('dashboard.overview_title')}</h2>
-        <p className="mt-0.5 text-sm text-gray-500 dark:text-slate-400">{t('dashboard.overview_subtitle')}</p>
+        <h2 className="text-xl font-bold text-gray-900 dark:text-white">{t('dashboard.overview_title')}</h2>
+        <p className="mt-1 text-base text-gray-500 dark:text-slate-400">{t('dashboard.overview_subtitle')}</p>
       </div>
 
       {/* Feature cards grid */}

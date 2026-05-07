@@ -25,18 +25,36 @@
 /* ─── Global base ────────────────────────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
   background-color: var(--bg-base);
   color: var(--text-primary);
   transition: background-color 0.2s ease, color 0.2s ease;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
   font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  line-height: 1.6;
 }
 
-/* RTL support */
-[dir="rtl"] body {
-  font-family: 'Tajawal', 'Segoe UI', sans-serif;
+/* RTL support — خط عربي واضح ومقروء */
+[dir="rtl"] body,
+[dir="rtl"] * {
+  font-family: 'Tajawal', 'Segoe UI', system-ui, sans-serif;
+}
+
+/* تحسين وضوح النصوص العربية بشكل عام */
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3,
+[dir="rtl"] h4, [dir="rtl"] h5, [dir="rtl"] h6 {
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+}
+
+[dir="rtl"] p, [dir="rtl"] span, [dir="rtl"] label {
+  line-height: 1.7;
 }
 
 /* ─── Scrollbar ─────────────────────────────────────────────────────────────── */
@@ -44,3 +62,4 @@ body {
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 99px; }
 .dark ::-webkit-scrollbar-thumb { background: #475569; }
+
