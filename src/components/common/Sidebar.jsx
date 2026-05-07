@@ -44,7 +44,7 @@ const Sidebar = () => {
   };
 
   const linkClass = ({ isActive }) =>
-    `flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-bold transition-all duration-200 ${
+    `flex items-center gap-3 px-3 py-2.5 rounded-xl text-base font-bold transition-all duration-200 ${
       isActive
         ? 'bg-blue-600 dark:bg-blue-500 text-white shadow-md shadow-blue-500/20'
         : 'text-gray-600 dark:text-slate-400 hover:bg-gray-100 dark:hover:bg-slate-800 hover:text-gray-900 dark:hover:text-white'
@@ -91,7 +91,7 @@ const Sidebar = () => {
             <p className="text-[10px] text-gray-400 dark:text-slate-500 uppercase tracking-widest font-bold">
               {t('doctor.sidebar.signedInAs', 'مسجل دخول كـ')}
             </p>
-            <p className="text-sm font-black text-gray-800 dark:text-slate-200 truncate mt-0.5 w-full block overflow-hidden text-ellipsis">
+            <p className="text-base font-black text-gray-800 dark:text-slate-200 truncate mt-0.5 w-full block overflow-hidden text-ellipsis">
               د. {user.first_name || user.username}
             </p>
           </div>
@@ -105,7 +105,7 @@ const Sidebar = () => {
             className={`flex-1 flex items-center justify-center gap-2 p-2.5 rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-600 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors`}
           >
             {theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
-            {!collapsed && <span className="text-xs font-bold truncate">{theme === 'light' ? t('common.nav.darkMode', 'ليلي') : t('common.nav.lightMode', 'نهاري')}</span>}
+            {!collapsed && <span className="text-sm font-bold truncate">{theme === 'light' ? t('common.nav.darkMode', 'ليلي') : t('common.nav.lightMode', 'نهاري')}</span>}
           </button>
           
           <button
@@ -114,14 +114,14 @@ const Sidebar = () => {
             className={`flex-1 flex items-center justify-center gap-2 p-2.5 rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-600 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors`}
           >
             <Globe className="w-4 h-4 text-blue-500" />
-            {!collapsed && <span className="text-xs font-bold uppercase truncate">{i18n.language === 'en' ? 'عربي' : 'EN'}</span>}
+            {!collapsed && <span className="text-sm font-bold uppercase truncate">{i18n.language === 'en' ? 'عربي' : 'EN'}</span>}
           </button>
         </div>
 
         {/* Logout */}
         <button
           onClick={logout}
-          className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-bold text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-500/10 transition-colors duration-150 ${collapsed ? 'justify-center' : ''}`}
+          className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-base font-bold text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-500/10 transition-colors duration-150 ${collapsed ? 'justify-center' : ''}`}
         >
           <LogOut className="w-5 h-5 shrink-0" />
           {!collapsed && <span className="truncate">{t('doctor.sidebar.logout', 'تسجيل خروج')}</span>}

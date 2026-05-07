@@ -23,7 +23,7 @@ const LangToggle = () => {
     <button
       onClick={toggle}
       title={isAR ? 'Switch to English' : 'التبديل للعربية'}
-      className="flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-sm font-bold border border-gray-200 dark:border-slate-600 text-gray-600 dark:text-slate-300 hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors"
+      className="flex items-center gap-1.5 rounded-lg px-3 py-2 text-base font-bold border border-gray-200 dark:border-slate-600 text-gray-600 dark:text-slate-300 hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors"
     >
       <Globe className="h-4 w-4" />
       <span>{isAR ? 'EN' : 'ع'}</span>
@@ -83,7 +83,7 @@ const UserDropdown = ({ user, logout, dashboardPath, profilePath }) => {
     <div className="relative" ref={ref}>
       <button
         onClick={() => setOpen(p => !p)}
-        className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-semibold text-gray-700 dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors border border-transparent hover:border-gray-200 dark:hover:border-slate-600 focus:outline-none"
+        className="flex items-center gap-2 rounded-xl px-3 py-2 text-base font-semibold text-gray-700 dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors border border-transparent hover:border-gray-200 dark:hover:border-slate-600 focus:outline-none"
       >
         {avatar ? (
           <img 
@@ -104,19 +104,19 @@ const UserDropdown = ({ user, logout, dashboardPath, profilePath }) => {
         <div className="absolute end-0 top-12 w-52 rounded-2xl bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 shadow-xl z-50 py-2 overflow-hidden">
           {/* User info */}
           <div className="px-4 py-3 border-b border-gray-100 dark:border-slate-700">
-            <p className="text-xs text-gray-500 dark:text-slate-400">{t('nav.hello')},</p>
-            <p className="font-bold text-gray-900 dark:text-white truncate">{username}</p>
-            <p className="text-xs text-blue-500 font-medium mt-0.5">{user?.role}</p>
+            <p className="text-sm text-gray-500 dark:text-slate-400">{t('nav.hello')},</p>
+            <p className="text-base font-bold text-gray-900 dark:text-white truncate">{username}</p>
+            <p className="text-sm text-blue-500 font-medium mt-0.5">{user?.role}</p>
           </div>
 
           <Link to={profilePath} onClick={() => setOpen(false)}
-            className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 dark:text-slate-200 hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors">
+            className="flex items-center gap-3 px-4 py-2.5 text-base text-gray-700 dark:text-slate-200 hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors">
             <User className="h-4 w-4 text-gray-400" />
             {t('nav.profile')}
           </Link>
 
           <button onClick={() => { logout(); setOpen(false); }}
-            className="flex w-full items-center gap-3 px-4 py-2.5 text-sm text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors border-t border-gray-100 dark:border-slate-700 mt-1">
+            className="flex w-full items-center gap-3 px-4 py-2.5 text-base text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors border-t border-gray-100 dark:border-slate-700 mt-1">
             <LogOut className="h-4 w-4" />
             {t('nav.logout')}
           </button>
@@ -146,7 +146,7 @@ const Navbar = () => {
             <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center shadow-sm">
               <Stethoscope className="w-5 h-5 text-white" />
             </div>
-            <span className="text-lg font-extrabold text-gray-900 dark:text-white tracking-tight">
+            <span className="text-xl font-extrabold text-gray-900 dark:text-white tracking-tight">
               Bio<span className="text-blue-600">Code</span>
             </span>
           </Link>
@@ -155,7 +155,7 @@ const Navbar = () => {
           <div className="hidden md:flex flex-1 justify-center">
             <NavLink to={dashPath}
               className={({ isActive }) =>
-                `flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-colors ${
+                `flex items-center gap-2 px-4 py-2 rounded-xl text-base font-bold transition-colors ${
                   isActive
                     ? 'bg-blue-600 text-white shadow-sm'
                     : 'text-gray-600 dark:text-slate-300 hover:bg-gray-100 dark:hover:bg-slate-800'

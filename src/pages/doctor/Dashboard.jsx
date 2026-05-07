@@ -78,13 +78,13 @@ const Dashboard = () => {
       {/* ─── Welcome Banner ──────────────────────────────────────────────── */}
       <div className="relative overflow-hidden rounded-3xl bg-gradient-to-l from-blue-600 to-indigo-700 px-8 py-10 shadow-lg sm:px-12">
         <div className="relative z-10 w-full">
-          <h1 className="text-3xl font-bold text-white tracking-tight">
+          <h1 className="text-4xl font-bold text-white tracking-tight">
             مرحباً بعودتك، د. {user?.username || 'زميلي'}
           </h1>
-          <p className="mt-2 text-blue-100 font-medium">
+          <p className="mt-2 text-lg text-blue-100 font-bold">
             إليك نظرة عامة على نشاط عيادتك اليوم.
           </p>
-          <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-1.5 text-sm font-semibold text-white backdrop-blur-md">
+          <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-1.5 text-base font-semibold text-white backdrop-blur-md">
             <CalendarDays className="h-4 w-4" />
             {todayDateStr}
           </div>
@@ -127,8 +127,8 @@ const Dashboard = () => {
               </div>
               <div className="relative z-10 flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-bold text-gray-500">طلبات الحجز المعلقة</p>
-                  <p className="mt-2 text-3xl font-bold text-gray-900 tracking-tight">{stats.pending_appointments}</p>
+                  <p className="text-base font-bold text-gray-500">طلبات الحجز المعلقة</p>
+                  <p className="mt-2 text-4xl font-bold text-gray-900 tracking-tight">{stats.pending_appointments}</p>
                 </div>
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-yellow-50 text-yellow-500">
                   <CalendarClock className="h-6 w-6" />
@@ -147,8 +147,8 @@ const Dashboard = () => {
               </div>
               <div className="relative z-10 flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-bold text-gray-500">مواعيد اليوم</p>
-                  <p className="mt-2 text-3xl font-bold text-gray-900 tracking-tight">{stats.today_appointments}</p>
+                  <p className="text-base font-bold text-gray-500">مواعيد اليوم</p>
+                  <p className="mt-2 text-4xl font-bold text-gray-900 tracking-tight">{stats.today_appointments}</p>
                 </div>
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50 text-emerald-500">
                   <CalendarCheck className="h-6 w-6" />
@@ -167,8 +167,8 @@ const Dashboard = () => {
               </div>
               <div className="relative z-10 flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-bold text-gray-500">إجمالي المرضى</p>
-                  <p className="mt-2 text-3xl font-bold text-gray-900 tracking-tight">{stats.total_patients}</p>
+                  <p className="text-base font-bold text-gray-500">إجمالي المرضى</p>
+                  <p className="mt-2 text-4xl font-bold text-gray-900 tracking-tight">{stats.total_patients}</p>
                 </div>
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-blue-500">
                   <Users className="h-6 w-6" />
@@ -183,7 +183,7 @@ const Dashboard = () => {
       {/* ─── Quick Actions ──────────────────────────────────────────────── */}
       {!isLoading && !error && (
         <div className="pt-4 animate-in fade-in slide-in-from-bottom-4 duration-500">
-          <h2 className="text-lg font-bold text-gray-900 mb-4 px-1">إجراءات سريعة</h2>
+          <h2 className="text-xl font-bold text-gray-900 mb-4 px-1">إجراءات سريعة</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             
             <Link 
@@ -194,7 +194,7 @@ const Dashboard = () => {
                 <CalendarDays className="h-5 w-5" />
               </div>
               <div>
-                <h3 className="font-bold text-gray-900">إدارة المواعيد</h3>
+                <h3 className="text-base font-bold text-gray-900">إدارة المواعيد</h3>
                 <p className="text-sm text-gray-500 line-clamp-1">مراجعة طلبات الحجز وتنظيم الجدول</p>
               </div>
             </Link>
@@ -207,7 +207,7 @@ const Dashboard = () => {
                 <UserCog className="h-5 w-5" />
               </div>
               <div>
-                <h3 className="font-bold text-gray-900">تحديث الملف الشخصي</h3>
+                <h3 className="text-base font-bold text-gray-900">تحديث الملف الشخصي</h3>
                 <p className="text-sm text-gray-500 line-clamp-1">تعديل بياناتك وتفاصيل العيادة</p>
               </div>
             </Link>
