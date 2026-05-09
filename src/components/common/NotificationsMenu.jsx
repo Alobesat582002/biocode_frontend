@@ -23,7 +23,7 @@ const NotificationsMenu = ({ user }) => {
   // دالة جلب الإشعارات
   const fetchNotifications = async () => {
     try {
-      const response = await axiosInstance.get('/users/notifications/');
+      const response = await axiosInstance.get('/api/users/notifications/');
       const data = response.data;
       setNotifications(data);
       setUnreadCount(data.filter(n => !n.is_read).length);
@@ -42,7 +42,7 @@ const NotificationsMenu = ({ user }) => {
   // تفريغ الإشعارات وقراءتها
   const markAsRead = async (id = null) => {
     try {
-      const url = id ? `/users/notifications/${id}/read/` : '/users/notifications/read/';
+      const url = id ? `/api/users/notifications/${id}/read/` : '/api/users/notifications/read/';
       await axiosInstance.patch(url);
       fetchNotifications();
     } catch (error) {
